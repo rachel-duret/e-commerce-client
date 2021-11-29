@@ -1,0 +1,13 @@
+$mainColor: #ecbce8cc;
+$hover: #6076d6cc;
+$secondaryColor:#53094dcc;
+$width:768px;
+$margin:20px;
+$silderBackGround:#dde2bfcc;
+$button:#d883becc;
+
+@mixin mobile{
+    @media(max-width:#{$width}){
+        @content
+    }
+}
