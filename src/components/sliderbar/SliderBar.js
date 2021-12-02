@@ -1,53 +1,49 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './siderbar.scss';
 import { ArrowLeft, ArrowRight} from '@mui/icons-material';
+import {sliderItems} from '../../data';
+
 
 
 function SliderBar() {
+
+    const [sliderIndex, setSliderIndex] = useState(0);
+    const length = sliderItems.length;
+
+    const handleClickLeft = () =>{
+       setSliderIndex(sliderIndex === 0 ? length - 1 : sliderIndex -1 )
+      /*  console.log(sliderIndex) */
+        
+    }
+    const handleClickRight = () =>{
+        setSliderIndex(sliderIndex === length - 1 ? 0 : sliderIndex + 1 )
+       /*  console.log(sliderIndex) */
+    }
+
     return (
         <div className="sliderbarContainer">
-            <ArrowLeft className="arrowLeft" />
+            <ArrowLeft className="arrowLeft" direction="left" onClick={handleClickLeft} />
             <div className="sliderItemContainer">
-                    <div className="sliderItem">
-                        <div className="imgContainer">
-                        <img src="https://img.mytheresa.com/2176/2176/90/jpeg/catalog/product/72/P00530502.jpg" alt="" />
-                        </div>
+                {
+                   sliderItems.map((item,index)=>(
+                       index === sliderIndex && (
+                          <div className="sliderItem" key={index}>
+                            <div className="imgContainer">
+                            <img src={item.img} alt="" />
+                            </div>
                         
-                        <div className="infoContainer">
-                            <h2> Kid Skirt   </h2>
-                            <p>For 5-10years old</p>
-                            <button>Show Now</button>
-                        </div>
-                        
-                    </div>
-                    <div className="sliderItem">
-                        <div className="imgContainer">
-                        <img src="https://cdn.shopify.com/s/files/1/1045/8790/products/AW20_kids_on_the_moon_95.jpg?v=1598901912" alt="" />
-                        </div>
-                        
-                        <div className="infoContainer">
-                            <h2> Kid Skirt   </h2>
-                            <p>For 5-10years old</p>
-                            <button>Show Now</button>
-                        </div>
-                        
-                    </div>
-                    <div className="sliderItem">
-                        <div className="imgContainer">
-                        <img src="https://n.nordstrommedia.com/id/sr3/13ed20a6-1eae-4bfe-a347-a262b727988b.jpeg?crop=pad&pad_color=FFF&format=jpeg&w=780&h=1196" alt="" />
-                        </div>
-                        
-                        <div className="infoContainer">
-                            <h2> Kid Skirt   </h2>
-                            <p>For 5-10years old</p>
-                            <button>Show Now</button>
-                        </div>
-                        
-                    </div>
-
+                            <div className="infoContainer">
+                                <h2> {item.title}  </h2>
+                                <p>{item.desc}</p>
+                                <button>Show Now</button>
+                            </div>   
+                          </div>
+                       ) 
+                   ))
+                }   
             </div>
             
-            <ArrowRight className="arrowRight" />
+            <ArrowRight className="arrowRight" direction="right"  onClick={handleClickRight} />
 
             
         </div>
