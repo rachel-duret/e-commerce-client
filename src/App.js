@@ -1,16 +1,17 @@
 
 import './App.css';
-import Home from'./pages/home/Home'
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/Navbar';
 import Announcement from './components/Announcement';
-import SliderBar from './components/sliderbar/SliderBar';
+import Slider from './components/Slider';
+
 
 function App() {
   return (
     <div className="App">
       <Announcement />
       <Navbar />
-      <SliderBar />
+      <Slider />
+
     </div>
   );
 }
