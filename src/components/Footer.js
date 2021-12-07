@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const Container = styled.div`
     display: flex;
     background-color: whitesmoke;
-    margin-bottom: 20px;
+    margin: 20px 0px;
 `;
 
 const Left = styled.div`
