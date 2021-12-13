@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import NewLetter from '../components/NewLetter';
 import Products from '../components/Products';
+import { mobile } from '../responsive';
 
 const Container = styled.div``;
 const Title = styled.h2``;
@@ -12,17 +13,20 @@ const FilterContainer = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 20px;
+    ${mobile({flexDirection:"column", marginLeft:"auto"})}
 `;
 const Filter = styled.div`
     display: flex;
     height: 50px;
     justify-content: center;
     align-items: center;
+  
  
 `;
 const FilterText = styled.p`
     font-size: 24px;
     font-weight: 400;
+    ${mobile({fontSize:"20px"})}
 `;
 const Select = styled.select`
     margin-left: 20px;

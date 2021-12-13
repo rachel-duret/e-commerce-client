@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
+import { mobile } from '../responsive';
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -16,6 +17,7 @@ const Form = styled.div`
     width: 40%;
     height: 60vh;
     background-color: whitesmoke;
+    ${mobile({width:"80%", height:"50vh"})}
 `;
 const Input = styled.input`
     width: 80%;

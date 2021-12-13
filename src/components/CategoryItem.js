@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { mobile } from '../responsive';
 
 
 const Container = styled.div`
@@ -7,6 +8,7 @@ const Container = styled.div`
     margin: 5px;
     height: 70vh;
     position: relative;
+    ${mobile({flexDirection:"column"})}
 `;
 const Image = styled.img`
     width: 100%;

@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight } from '@mui/icons-material';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { sliderItems } from '../data';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
     width: 100%;
@@ -57,15 +58,18 @@ const Slide = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    ${mobile({flexDirection:"column"})}
    
 `;
 const ImageContainer = styled.div`
     flex: 1;
     width: 100%;
     height: 100vh;
+    ${mobile({height:"30vh"})}
 `;
 const Image = styled.img`
     height: 80%;
+    ${mobile({height:"100%"})}
 `;
 const InfoContainer = styled.div`
     display: flex;
@@ -76,6 +80,7 @@ const InfoContainer = styled.div`
     width: 100%;
     height: 100vh;
     background-color: whitesmoke;
+    ${mobile({height:"50vh", alignItem:"top"})}
 `;
 const Title = styled.h2``;
 const Desc = styled.p``;
@@ -106,14 +111,14 @@ function Slider() {
                 sliderItems.map((item, index) =>(
                     sliderIndex === index &&(
                         <Slide key={index}>
-                        <ImageContainer>
-                            <Image src={item.img} alt="" />
-                        </ImageContainer>
-                        <InfoContainer>
-                            <Title>{item.title}</Title>
-                            <Desc>{item.desc}</Desc>
-                            <Bouton>Check Now</Bouton>
-                        </InfoContainer>
+                            <ImageContainer>
+                                <Image src={item.img} alt="" />
+                            </ImageContainer>
+                            <InfoContainer>
+                                <Title>{item.title}</Title>
+                                <Desc>{item.desc}</Desc>
+                                <Bouton>Check Now</Bouton>
+                            </InfoContainer>
                     </Slide>
                     )
                 ))

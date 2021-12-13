@@ -1,12 +1,14 @@
 import { Email, Facebook, Instagram, LinkedIn, Phone, Room, Twitter, YouTube } from '@mui/icons-material';
 import React from 'react';
 import styled from 'styled-components';
+import { mobile } from '../responsive';
 
 
 const Container = styled.div`
     display: flex;
     background-color: whitesmoke;
     margin: 20px 0px;
+    ${mobile({flexDirection:"column"})}
 `;
 
 const Left = styled.div`

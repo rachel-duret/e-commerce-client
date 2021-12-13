@@ -4,6 +4,7 @@ import {
     Search, 
     FavoriteBorder,
     ShoppingCart } from '@mui/icons-material';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
     flex:1;
@@ -18,6 +19,7 @@ const Container = styled.div`
     border-radius: 5px;
     -webkit-box-shadow: 0px 2px 14px -2px rgba(38,8,26,0.78); 
     box-shadow: 0px 2px 14px -2px rgba(38,8,26,0.78);
+   
     `;
 const ImageContainer = styled.div`
     width: 90%;

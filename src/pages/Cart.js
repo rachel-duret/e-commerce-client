@@ -5,10 +5,12 @@ import styled from 'styled-components';
 import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import { mobile } from '../responsive';
 
 const Container = styled.div``;
 const Wrapper = styled.div`
     padding: 20px;
+   
 `;
 const Title = styled.h2`
     font-weight: 300;
@@ -30,7 +32,7 @@ const TopButton = styled.button`
     background-color: ${(props) => props.color };
 `;
 const TopTexts = styled.p`
-
+     ${mobile({fontSize:"16px"})}
 `;
 const TopText = styled.span`
     text-decoration: underline;
@@ -41,6 +43,7 @@ const TopText = styled.span`
 const Bottom = styled.div`
     display: flex;
     justify-content: space-between;
+    ${mobile({flexDirection:"column"})}
 
 `;
 const Info = styled.div`
@@ -50,6 +53,7 @@ const Info = styled.div`
 const Product = styled.div`
     display: flex;
     justify-content: space-between;
+    border-bottom: 0.5px dashed gray;
 
 `;
 const ProductDetail = styled.div`
@@ -58,6 +62,7 @@ const ProductDetail = styled.div`
 `;
 const Image = styled.img`
     width: 200px;
+    ${mobile({width:"100px"})}
 `;
 const Details = styled.div`
     padding: 20px;
@@ -106,6 +111,7 @@ const Summary = styled.div`
   padding: 20px;
   min-height: 40vh;
   background-color: whitesmoke;
+  ${mobile({marginTop:"20px"})}
 `;
 
 const SummaryTitle = styled.h1`
